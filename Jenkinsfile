@@ -1,4 +1,4 @@
-pipeline
+pipeline{
    agents any
      stages{
        stage('checkout'){
@@ -9,7 +9,7 @@ pipeline
           steps{
               sh 'mvn install'
                }}
-       stage('Depolyment')
+       stage('Depolyment'){
           steps{
             sh 'cp /root/.jenkins/workspace/Nagpur/target/Nagpur.war  /root/apache-tomcat-11.0.15/webapps'
                }}
