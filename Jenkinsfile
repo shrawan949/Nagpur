@@ -1,15 +1,15 @@
 pipeline{
-   agents any
+   agent any
      stages{
-       stage('checkout'){
+       stage('checkout') {
           steps{
-              checkout  SCM
+              checkout scm
               }}
-       stage('BUILD'){
+       stage('BUILD') {
           steps{
               sh 'mvn install'
                }}
-       stage('Depolyment'){
+       stage('Depolyment') {
           steps{
             sh 'cp /root/.jenkins/workspace/Nagpur/target/Nagpur.war  /root/apache-tomcat-11.0.15/webapps'
                }}
